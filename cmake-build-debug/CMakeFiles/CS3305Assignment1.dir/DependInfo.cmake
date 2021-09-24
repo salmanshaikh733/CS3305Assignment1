@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/tmp/tmp.ckvyuoFirL/external_program.c" "/tmp/tmp.ckvyuoFirL/cmake-build-debug/CMakeFiles/CS3305Assignment1.dir/external_program.c.o"
   "/tmp/tmp.ckvyuoFirL/main.c" "/tmp/tmp.ckvyuoFirL/cmake-build-debug/CMakeFiles/CS3305Assignment1.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

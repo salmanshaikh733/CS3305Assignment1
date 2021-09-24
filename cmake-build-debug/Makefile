@@ -129,6 +129,30 @@ CS3305Assignment1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CS3305Assignment1.dir/build.make CMakeFiles/CS3305Assignment1.dir/build
 .PHONY : CS3305Assignment1/fast
 
+external_program.o: external_program.c.o
+.PHONY : external_program.o
+
+# target to build an object file
+external_program.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CS3305Assignment1.dir/build.make CMakeFiles/CS3305Assignment1.dir/external_program.c.o
+.PHONY : external_program.c.o
+
+external_program.i: external_program.c.i
+.PHONY : external_program.i
+
+# target to preprocess a source file
+external_program.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CS3305Assignment1.dir/build.make CMakeFiles/CS3305Assignment1.dir/external_program.c.i
+.PHONY : external_program.c.i
+
+external_program.s: external_program.c.s
+.PHONY : external_program.s
+
+# target to generate assembly for a file
+external_program.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CS3305Assignment1.dir/build.make CMakeFiles/CS3305Assignment1.dir/external_program.c.s
+.PHONY : external_program.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CS3305Assignment1"
+	@echo "... external_program.o"
+	@echo "... external_program.i"
+	@echo "... external_program.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

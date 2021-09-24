@@ -74,6 +74,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/tmp/tmp.ckvyuoFirL/external_program.c">
+			<Option target="CS3305Assignment1"/>
+		</Unit>
 		<Unit filename="/tmp/tmp.ckvyuoFirL/main.c">
 			<Option target="CS3305Assignment1"/>
 		</Unit>

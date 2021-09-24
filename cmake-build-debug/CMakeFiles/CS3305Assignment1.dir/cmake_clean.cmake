@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/CS3305Assignment1.dir/external_program.c.o"
   "CMakeFiles/CS3305Assignment1.dir/main.c.o"
   "CS3305Assignment1"
   "CS3305Assignment1.pdb"
