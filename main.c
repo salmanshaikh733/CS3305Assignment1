@@ -4,14 +4,12 @@
 #include <string.h>
 #include <stdlib.h>
 
-
 /*
  * CS3305 - Assignment 1
  *
  * Created by Salman Shaikh on 2021-09-23
  * Student Number mshaik52 - 250959996
  */
-
 
 /**
  *
@@ -23,50 +21,56 @@ int main(int argc, const char * argv[]) {
 
     pid_t child_1,child_2, child_2_1;
 
-    //create the child process and they child process pid
     child_1=fork();
 
-    //for parent process to execute
     if(child_1>0) {
-        printf("Parent process created child with pid: %d, parent pid is: %d.\n",child_1,getpid());
+        printf("parent (PID %d) created child_1 (PID %d).\n",getpid(),child_1);
+        printf("parent (PID %d) is waiting for child_1 (PID %d) to complete before creating child_2.\n",getpid(),child_1);
     }
 
-    //for child process to execute
     if(child_1 == 0) {
-        printf("I am child 1 my pid is: %d, and my parents pid is: %d\n",getpid(),getppid());
+        printf("child_1 (PID %d) is calling an external program external_program.out and leaving parent\n",getpid(),getppid());
 
-        //TODO call an external program...
+        char externalMessage[100]="";
+        sprintf(externalMessage,"%d for child_1",getpid());
 
+        wait(NULL);
+
+        execl(argv[1], "",externalMessage);
     }
 
-    //parent will wait for child 1 to finish
     wait(NULL);
-
-    //create child 2
 
     child_2 = fork();
 
-    //if child 2 is made successfully
     if(child_2 > 0) {
-        printf("child_2 has been made with pid: %d\n", child_2);
+        printf("parent (PID %d) created child_2 (PID %d)\n", getpid(),child_2);
     }
-    //for child 2 process
+
     if(child_2 ==0 ){
-        //child 2 will create anther process
         child_2_1 = fork();
 
-        //for child 2
         if(child_2_1 > 0){
-            printf("child_2_1 has been made with pid\n", child_2_1);
+            printf("child_2 (PID %d) created child_2.1 (PID %d)\n", getpid(), child_2_1);
+            wait(NULL);
         }
-        //for child_2_1
+
         if(child_2_1 == 0) {
-            //TODO child_2_1 will call external program here
+            char externalMessage[100]="";
+            sprintf(externalMessage,"%d for child_2.1",getpid());
+
+            printf("child_2.1 (PID %d) is calling an external program external_program.out and leaving child_2.1\n",getpid());
+
+            wait(NULL);
+
+            execl(argv[1], "",externalMessage);
         }
-
-
     }
 
+    wait(NULL);
 
+    if(child_1 > 0 && child_2 > 0) {
+        printf("child_1 and child_2 are completed and parent process is terminating…\n");
+    }
     return 0;
 }
