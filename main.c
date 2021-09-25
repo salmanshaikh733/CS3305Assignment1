@@ -29,7 +29,7 @@ int main(int argc, const char * argv[]) {
     }
 
     if(child_1 == 0) {
-        printf("child_1 (PID %d) is calling an external program external_program.out and leaving parent\n",getpid(),getppid());
+        printf("child_1 (PID %d) is calling an external program external_program.out and leaving parent\n",getpid());
 
         char externalMessage[100]="";
         sprintf(externalMessage,"%d for child_1",getpid());
@@ -59,7 +59,7 @@ int main(int argc, const char * argv[]) {
             char externalMessage[100]="";
             sprintf(externalMessage,"%d for child_2.1",getpid());
 
-            printf("child_2.1 (PID %d) is calling an external program external_program.out and leaving child_2.1\n",getpid());
+            printf("child_2.1 (PID %d) is calling an external program external_program.out and leaving child_2\n",getpid());
 
             wait(NULL);
 
