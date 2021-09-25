@@ -3,4 +3,4 @@ project(CS3305Assignment1 C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(CS3305Assignment1 main.c external_program.c)
+add_executable(CS3305Assignment1 assignment1.c external_program.c)
